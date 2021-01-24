@@ -84,6 +84,12 @@
 
  // comment this line if you are using HW1.0
 #define KEYS_INPUT_PULLUP
+
+// comment this line if you are using HW1.0 and keys with
+// NO (normally open) contacts or if you are using HW2.0
+// and keys with NC (normally closed) contacts
+#define KEYS_INPUT_INVERTED
+
 #define KEYS_READ_PORT      PORTC
 #define KEYS_READ_DDR       DDRC
 #define KEYS_READ_PINS      PINC

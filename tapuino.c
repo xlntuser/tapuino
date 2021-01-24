@@ -108,6 +108,7 @@ void setup_cycle_timing() {
 
   switch (g_machine_type)
   {
+    default:
     case C64:
       ntsc_cycles_per_second = 1022272;
       pal_cycles_per_second  = 985248;
@@ -124,6 +125,7 @@ void setup_cycle_timing() {
   
   switch(g_video_mode)
   {
+    default:
     case PAL:
       g_cycle_mult_raw = (1000000.0 / pal_cycles_per_second);
     break;
@@ -718,7 +720,7 @@ int tapuino_hardware_setup(void)
 //  serial_println_P(S_INITI2COK);
   lcd_title_P(S_INIT);
   sprintf_P((char*)g_fat_buffer, S_VERSION_PATTERN, TAPUINO_MAJOR_VERSION, TAPUINO_MINOR_VERSION, TAPUINO_BUILD_VERSION);
-  lcd_status(g_fat_buffer);
+  lcd_status((char*)g_fat_buffer);
   _delay_ms(2000);
   
   

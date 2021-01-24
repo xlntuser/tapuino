@@ -3,9 +3,10 @@
 
 WCHAR ff_convert (	/* Converted character, Returns zero on error */
 	WCHAR	chr,	/* Character code to be converted */
-	UINT	dir		/* 0: Unicode to OEMCP, 1: OEMCP to Unicode */
+  UINT	dir   /* 0: Unicode to OEMCP, 1: OEMCP to Unicode */
 )
 {
+  (void)dir; // unused
 	return chr;
 }
 

@@ -93,10 +93,10 @@ void input_callback()
   unsigned char i;
 
   // key changed ?
-#ifdef KEYS_INPUT_PULLUP
-  i = key_state ^ ~KEYS_READ_PINS;  // HW V2.0 for internal pullup the reading is inverted
+#ifdef KEYS_INPUT_INVERTED
+  i = key_state ^ ~KEYS_READ_PINS;
 #else  
-  i = key_state ^ KEYS_READ_PINS;   // HW V1.0 normal read
+  i = key_state ^ KEYS_READ_PINS;
 #endif 
 
   ct0 = ~( ct0 & i );          // reset or count ct0
@@ -113,4 +113,3 @@ void input_callback()
   } 
   player_handleInputKeys();
 }
-
